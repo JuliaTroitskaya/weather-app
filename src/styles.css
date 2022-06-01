@@ -1,0 +1,123 @@
+.container {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  background-color: white;
+  max-width: 800px;
+  height: auto;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  background: url(images/weather.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Akshar", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: lightgray;
+}
+.current-temperature {
+  font-size: 60px;
+  color: white;
+}
+.present-temperature {
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+  top: 1;
+}
+.current-weather {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.current-city {
+  font-size: 35px;
+  text-align: center;
+  color: white;
+}
+.date-time {
+  text-align: center;
+  color: white;
+}
+.future-temperature {
+  text-align: center;
+  margin-top: 10px;
+}
+.day,
+.weather,
+.temperature,
+.date {
+  text-align: center;
+  color: white;
+}
+.second-row {
+  height: 180px;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.third-row {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.s-button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 112px;
+  height: 40px;
+}
+.s-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.c-button {
+  height: 40px;
+  border: none;
+  width: 90px;
+  background-color: rgba(184, 12, 118, 0.7);
+  border: none;
+}
+.c-button:hover {
+  background-color: rgba(128, 11, 112, 1);
+}
+
+.temp {
+  position: relative;
+  top: 10%;
+}
+.current-time {
+  font-size: 40px;
+}
+.current-day,
+.temperature {
+  font-size: 20px;
+}
+.day,
+.weather,
+.current-date {
+  font-size: 25px;
+}
+
+.form-control {
+  position: relative;
+  left: 15px;
+  height: 40px;
+}
+#unit-of-measure {
+  font-size: 20px;
+  position: relative;
+  top: -28px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+  color: darkgoldenrod;
+}
+#weather-description {
+  font-size: 22px;
+}
