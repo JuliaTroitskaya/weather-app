@@ -1,51 +1,55 @@
-let currentTime = new Date();
-let time = document.querySelector("#current-time");
-let hour = currentTime.getHours();
-let minute = currentTime.getMinutes();
-let date = currentTime.getDate();
-let today = document.querySelector("#current-date");
-let months = [
-  "01",
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
-  "07",
-  "08",
-  "09",
-  "10",
-  "11",
-  "12",
-];
-let month = months[currentTime.getMonth()];
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[currentTime.getDay()];
-let dayOfWeek = document.querySelector("#current-day");
-
-dayOfWeek.innerHTML = `${day}`;
-
-if (date < 10) {
-  date = `0${date}`;
-}
-today.innerHTML = `${month}/${date}`;
-
-if (hour < 10) {
-  hour = `0${hour}`;
+function formatTime(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
+  let minute = now.getMinutes();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  return `${hour}:${minute}`;
 }
 
-if (minute < 10) {
-  minute = `0${minute}`;
+function formatDateMonth(timestamp) {
+  let now = new Date(timestamp);
+  let months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
+  let month = months[now.getMonth()];
+  let date = now.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
+
+  return `${month}/${date}`;
 }
-time.innerHTML = `${hour}:${minute}`;
+
+function formatDay(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `${day}`;
+}
 
 function search(city) {
   let apiKey = "c97684934a4c071aba1bb207f0e71af6";
@@ -61,7 +65,7 @@ function enterCity(event) {
   search(searchValue);
 }
 
-search("Kharkiv");
+search("London");
 let form = document.querySelector("form");
 form.addEventListener("submit", enterCity);
 
@@ -73,6 +77,12 @@ function showTemperature(response) {
   city.innerHTML = response.data.name;
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
+  let currentTime = document.querySelector("#current-time");
+  currentTime.innerHTML = formatTime(response.data.dt * 1000);
+  let today = document.querySelector("#current-date");
+  today.innerHTML = formatDateMonth(response.data.dt * 1000);
+  let dayOfWeek = document.querySelector("#current-day");
+  dayOfWeek.innerHTML = formatDay(response.data.dt * 1000);
 }
 
 function showCurrentPosition(position) {
