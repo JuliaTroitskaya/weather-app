@@ -47,16 +47,21 @@ if (minute < 10) {
 }
 time.innerHTML = `${hour}:${minute}`;
 
+function search(city) {
+  let apiKey = "c97684934a4c071aba1bb207f0e71af6";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
 function enterCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
   let searchValue = searchInput.value;
-  let apiKey = "c97684934a4c071aba1bb207f0e71af6";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
+  search(searchValue);
 }
 
+search("Kharkiv");
 let form = document.querySelector("form");
 form.addEventListener("submit", enterCity);
 
@@ -67,7 +72,7 @@ function showTemperature(response) {
   let city = document.querySelector("#current-city");
   city.innerHTML = response.data.name;
   let weatherDescription = document.querySelector("#weather-description");
-  weatherDescription.innerHTML = response.data.weather[0].main;
+  weatherDescription.innerHTML = response.data.weather[0].description;
 }
 
 function showCurrentPosition(position) {

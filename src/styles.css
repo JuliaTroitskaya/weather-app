@@ -10,6 +10,7 @@ a:hover {
   text-decoration: underline;
   color: #2474bb;
 }
+
 .container {
   position: absolute;
   top: 15%;
@@ -123,6 +124,10 @@ a:hover {
 #weather-description {
   font-size: 22px;
 }
+#weather-description::first-letter {
+  text-transform: capitalize;
+}
+
 #footer {
   text-align: left;
   position: relative;
