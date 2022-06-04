@@ -83,6 +83,11 @@ function showTemperature(response) {
   today.innerHTML = formatDateMonth(response.data.dt * 1000);
   let dayOfWeek = document.querySelector("#current-day");
   dayOfWeek.innerHTML = formatDay(response.data.dt * 1000);
+  let icon = document.querySelector("#current-weather-image");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showCurrentPosition(position) {
