@@ -65,7 +65,6 @@ function enterCity(event) {
   search(searchValue);
 }
 
-search("London");
 let form = document.querySelector("form");
 form.addEventListener("submit", enterCity);
 
@@ -88,6 +87,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function showCurrentPosition(position) {
@@ -106,19 +106,29 @@ function showCurrentTemperature(response) {
 let currentButton = document.querySelector(".c-button");
 currentButton.addEventListener("click", showCurrentTemperature);
 
-//let celsius = document.querySelector("#celsius");
-//let fahrenheit = document.querySelector("#fahrenheit");
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let farenheitTemp = celsiusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemp);
+}
 
-//function changeToCelsius(event) {
-//event.preventDefault();
-//let currentTempOne = document.querySelector("#current-temp");
-//currentTempOne.innerHTML = "19";
-//}
+let celsiusTemperature = null;
 
-//function changeToFahrenheit(event) {
-//event.preventDefault();
-//let currentTempTwo = document.querySelector("#current-temp");
-//currentTempTwo.innerHTML = "66";
-//}
-//celsius.addEventListener("click", changeToCelsius);
-//fahrenheit.addEventListener("click", changeToFahrenheit);
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeToFahrenheit);
+
+function changeToCelsius(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeToCelsius);
+
+search("London");

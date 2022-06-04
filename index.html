@@ -46,7 +46,7 @@
             <div class="card-body temp">
               <span id="current-temp"></span>
               <span id="unit-of-measure">
-               °C
+               <a href="#" id="celsius" class="active">°C</a> | <a href="#" id="fahrenheit">°F</a>
               </span>
             <div id="weather-description"></div>
             </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="col-5 weather-city">
           <div class="card second-row">
-            <div class="card-body">
+            <div class="card-body city-icon">
               <div class="current-weather"><img src="" id="current-weather-image"></div>
               <div class="current-city" id="current-city"></div>
             </div>
@@ -123,7 +123,7 @@
    
     </div>
     </div>
-   <div id="footer"><a href="https://github.com/JuliaTroitskaya/weather-app" target="_blank">Open-source code</a>, by Julia Troitska</div>
+   <div id="footer"><a href="https://github.com/JuliaTroitskaya/weather-app" target="_blank" id="footer-link">Open-source code</a>, by Julia Troitska</div>
     <script src="src/index.js"></script>
   </body>
 </html>

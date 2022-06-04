@@ -2,15 +2,6 @@ body {
   background-color: lightgray;
 }
 
-a {
-  text-decoration: none;
-  color: #2474bb;
-}
-a:hover {
-  text-decoration: underline;
-  color: #2474bb;
-}
-
 .container {
   position: absolute;
   top: 15%;
@@ -38,15 +29,15 @@ a:hover {
   top: 1;
 }
 .current-weather {
-  font-size: 50px;
   text-align: center;
-  color: white;
 }
 
 .current-city {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   color: white;
+  position: relative;
+  top: -8%;
 }
 .date-time {
   text-align: center;
@@ -65,7 +56,6 @@ a:hover {
 }
 .second-row {
   height: 180px;
-
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -93,10 +83,6 @@ a:hover {
   background-color: rgba(128, 11, 112, 1);
 }
 
-.temp {
-  position: relative;
-  top: 10%;
-}
 .current-time {
   font-size: 40px;
 }
@@ -133,4 +119,31 @@ a:hover {
   position: relative;
   top: 40px;
   font-size: 14px;
+}
+
+#footer-link {
+  text-decoration: none;
+  color: #2474bb;
+}
+#footer-link:hover {
+  text-decoration: underline;
+  color: #2474bb;
+}
+
+.active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  color: white;
+}
+#celsius,
+#fahrenheit {
+  text-decoration: none;
+}
+
+.city-icon {
+  position: relative;
+  top: -12%;
 }
