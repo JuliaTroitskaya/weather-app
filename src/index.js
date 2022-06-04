@@ -88,6 +88,8 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = response.data.main.temp;
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
 }
 
 function showCurrentPosition(position) {

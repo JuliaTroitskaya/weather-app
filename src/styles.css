@@ -19,7 +19,7 @@ body {
 }
 
 .current-temperature {
-  font-size: 60px;
+  font-size: 50px;
   color: white;
 }
 .present-temperature {
@@ -55,7 +55,7 @@ body {
   color: white;
 }
 .second-row {
-  height: 180px;
+  height: 190px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .current-time {
-  font-size: 40px;
+  font-size: 30px;
 }
 .current-day,
 .temperature {
@@ -109,6 +109,8 @@ body {
 
 #weather-description {
   font-size: 22px;
+  position: relative;
+  top: -8%;
 }
 #weather-description::first-letter {
   text-transform: capitalize;
@@ -146,4 +148,15 @@ body {
 .city-icon {
   position: relative;
   top: -12%;
+}
+
+#current-temp {
+  position: relative;
+  top: -6%;
+}
+
+#wind-speed {
+  position: relative;
+  top: -10%;
+  font-size: 20px;
 }
