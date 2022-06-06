@@ -56,11 +56,11 @@ body {
 }
 .second-row {
   height: 190px;
-  background: rgba(6, 125, 161, 0.5);
+  background: rgba(3, 95, 122, 0.5);
 }
 
 .third-row {
-  background: rgba(6, 125, 161, 0.5);
+  background: rgba(3, 95, 122, 0.5);
 }
 
 .s-button {
@@ -146,7 +146,7 @@ body {
 }
 
 .non-active {
-  color: brown;
+  color: darkblue;
 }
 .non-active:hover {
   color: black;
